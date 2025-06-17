@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* === Global Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  overflow: auto;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+
+}
+
+/* Slide Container */
+.slide-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* === Section Styles === */
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+  margin-top: 1px;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  position: relative;
+}
+
+/* === Header === */
+header h1 {
+  font-size: 4rem;
+  line-height: 1;
+}
+header {
+  margin: 0 auto;
+}
+/* === Navigation === */
+nav {
+  font-size: 1.5rem;
+  font-weight: 300;
+    position: relative; /* Ensure it's positioned */
+  z-index: 20; /* Higher z-index than the hero image */
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: row;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 275;
+  font-style: normal; 
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.nav-group span {
+  font-weight: 275; 
+  font-style: italic; 
+}
+.nav-group a{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* === Hero Image === */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  z-index: 1;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left bottom;
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  z-index: 10;
+  color: black;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: calc(2rem + env(safe-area-inset-top)) 2rem 2rem 2rem;
+}
+
+.about-section {
+  margin: 2rem;
+}
+
+.about-section h1 {
+  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+}
+
+.about-section h1 span {
+  font-style: italic;
+}
+
+.about-section p {
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.about-section p a {
+  text-decoration: underline;
+  color: white;
+}
+/* === COLLECTION SECTION === */
+.collection-section {
+  margin: 2rem 2rem 0 2rem;
+}
+.collection-section > h1 {
+  margin-bottom: 1.2rem;
+  font-weight: 300;
+  font-size: 3rem;
+} 
+.collection-section  ul  button {
+  background: none;
+  border: none;
+  margin: 0.3rem;
+  font-family: inherit;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.italic {
+  font-style: italic;
+}
+li {
+  border-top: 1px solid #a3a3a3;
+  border-bottom: 1px solid #a3a3a3;
+  margin-bottom: 1rem;
+  padding: .5em;
+}
+
+/* === CONTACT SECTION */
+.contact {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.contact-info {
+  margin: 2rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  flex: 1;
+}
+
+.footer-text {
+  text-align: center;
+  margin: 2rem 2rem;
+  padding-bottom: 2rem;
+  display: block;
+  position: relative;
+  bottom: 0;
+}
+
+.contact-info p {
+  font-size: 1rem;
+}
+
+.contact-form {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+
+.contact-links {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-form label {
+  margin: 1rem 0 0.5rem;
+  font-weight: 300;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: none;
+  border: none;
+  border-bottom: 0.5em solid #fff;
+  color: #fff;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.contact-form button {
+  margin-top: 2rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #555;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.contact-form button:hover {
+  background-color: #777;
+}
+
+footer {
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #ccc;
+}
+
+.light-section {
+  background-color: #fff;
+  color: #100D08;
+}
+
+.dark-section {
+  background-color: #100D08;
+  color: #fff;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-info {
+  min-height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact.dark-section {
+  min-height: 100vh;
+  height: auto;
+}
+
+.contact footer {
+  margin-top: 2rem;
+}
+
+.contact-links a {
+  color: white;
+  text-decoration: none;
+}
+
+a{
+  padding: 15px 0px;
+  color: #000;
+}
+.footer-text{
+  text-align: center;
+  margin: .8rem 2rem;
+  
+ }
+
+@media (max-width: 767px) {
+  /* Your mobile styles here */
+.horse-image{
+  width: 100%;
+}
+.hero img {
+  max-height: 100vh;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1;
+  object-position: left top;
+}
+header h1{
+  font-size: 3rem;
+  
+}
+header{
+  margin: 0;
+  margin-bottom: 1rem;
+}
+.hero-content {
+  align-items: self-start;  
+  z-index: 10;
+  color: #100D08;
+  box-sizing: border-box; 
+}
+
+.nav-group{
+  flex-direction: column;
+  gap: 0;
+  line-height: 1.6;
+  font-size: 1.5em;
+}
+
+.collection-section ul button {
+    font-size: 0.8em;
+  }
+  .about-section > h1 {
+    font-size: 3rem;
+  }
+  .about-section p{
+    font-size: 1.2rem;
+  }
+  .collection-section > h1 {
+    font-size: 3rem;
+  }.collection-section  ul  button {
+    font-size: 2em;
+    cursor: pointer;
+}
+li {
+  margin-bottom: 2rem;
+}
+.contact.dark-section{
+  flex-wrap: wrap;
+}
+.contact-info{
+  display: block;
+  margin: 1rem;
+}
+
+.footer-text {
+  margin: 1rem;
+  padding-bottom: 1rem;
+}
+.bi {
+  vertical-align: 0.7em;
+  margin-left: -4px;
+  font-size: 18px;
+}
+}
+/* CHANGES MADE FROM HERE */
+@media (min-width: 767px) {
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+    /* justify-content: space-between; */
+    margin-bottom: 0;
+    justify-content: space-between;/* ensures it takes full height of viewport */
+     /* optional spacing */
+  }
+  .wrapper {
+    display: flex;
+    
+  }
+  .contact-info .left-grid,
+  .contact-info .right-grid {
+  flex: 1;
+  }
+  .footer-text{
+    
+    padding: 0;
+    margin: 0;
+    margin-bottom: -2rem;
+  }
+  
+}
+.bi {
+  vertical-align: 0.7em;
+  margin-left: -4px;
+}
+
+.contact-info {
+  margin: 2rem 2rem;
+}
+.contact-header {
+  margin-bottom: 1rem;
+}
+.contact-links {
+  margin-top: 1rem;
+ }
+
+@media (max-width: 768px) {
+  .contact-info {
+    display: block;
+    margin: 2rem;
+  }
+
+  .contact.dark-section {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .footer-text {
+    text-align: center;
+    margin: 0.8rem 2rem;
+    display: block;
+  }
+
+  .contact-links {
+    flex-wrap: wrap;
+  }
+}
+
